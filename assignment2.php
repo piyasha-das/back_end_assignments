@@ -50,7 +50,7 @@
         <input type="file" name="image">
         <input type="submit">
     </form> -->
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
     <?php
           session_start();
         //   echo "Welcome ". $_SESSION['username']."  ";
