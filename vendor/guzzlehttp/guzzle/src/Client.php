@@ -475,3 +475,4 @@ class Client implements ClientInterface, \Psr\Http\Client\ClientInterface
             . 'request option to send a multipart/form-data request.');
     }
 }
+
