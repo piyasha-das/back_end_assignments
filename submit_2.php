@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!Doctype html>
 <body>
 <?php
