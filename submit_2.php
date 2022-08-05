@@ -1,6 +1,10 @@
+<?php
+
+?>
 <!Doctype html>
 <body>
 <?php
+    
     $info=$_POST["description"];
     // $info_copy= str_replace("\n","<br>",$info);
     echo $info;

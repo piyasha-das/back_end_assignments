@@ -35,6 +35,6 @@
         }            
       }
       if(isset($_POST['submit-linkedin'])){
-        header("location:https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=86wh8kvzek5hzu&redirect_uri=http://localhost/controller/logincontroller2.php&state=123&scope=r_liteprofile%20r_emailaddress%20");
+        header("location:https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=86wh8kvzek5hzu&redirect_uri=http://phpassignment.com/controller/logincontroller2.php&state=123&scope=r_liteprofile%20r_emailaddress%20");
       }
 ?>

@@ -40,7 +40,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/x-www-form-urlencoded'));
 
-$redirectUri = urlencode('http://localhost/controller/logincontroller2.php');
+$redirectUri = urlencode('http://phpassignment.com/controller/logincontroller2.php');
 $gt = urlencode('authorization_code');
 $code=$_GET['code'];
 // $code='AQSl0wdpQ_Bc7N2kODA8jjzS6wY-7iGe9kHc1Lbzl6DmohTY3lKz0oQeu85LVx9bgvdoVOfpUIeZMyxN7WKdNU5dGtDXdCGuWxsduoV3diLpTX7MSmSYO6Sk4rG0AoXR8weQdrXr3RixRe8mtS1fFecx1481PyAiICaDjolRzb8o_dUthsfgcxOKVwrXg3owiVAoZod3T7985yAEUos';

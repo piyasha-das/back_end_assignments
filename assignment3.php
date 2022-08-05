@@ -18,14 +18,15 @@ set_url("/?q=3");
 <script
     src="https://code.jquery.com/jquery-3.6.0.js"
     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous">
+</script>
+<script src="pattern.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style2.css">
-    <style>
+<style>
     .pagination {
         display: inline-block;
     }
-
   .pagination a {
     color: black;
     float: left;
@@ -36,41 +37,21 @@ set_url("/?q=3");
 </style>
 </head>
 <body>
-    <!-- <script>
-        $(document).ready(function(){
-            $('.submit').click(function(){
-                var txt = $('#textarea').val();
-                if (!txt.is_numeric){
-                    alert("only numbers are allowed");
-                }
-            });
-        });
-    </script> -->
-    <!-- <form  method="post" action="submit_2.php">
-        <label for="description">Enter Input : <i>(enter input in English|80 format)</i></label><br>
-        <textarea rows = "10" cols = "40" name = "description" id="textarea" pattern="[a-zA-z]*|[0-9]*" required>
-        
-         </textarea>
-         <br>
-         <input type="submit" value="submit">
-    </form> -->
     <div class="container">
-    <?php
+        <?php
           // session_start();
         //   echo "Welcome ". $_SESSION['username']."  ";
         //   echo "<a href='logoutform.php'>logout</a>";
             include 'upper.php';
         ?>
-    <form action="submit_2.php" method="post" enctype="multipart/form-data">
+        <form action="submit_2.php" method="post" enctype="multipart/form-data">
             <div class="user-details">
                 <div class="input-box">
-                    <label for="description">Enter Input : <i>(enter input in English|80 format)</i></label><br>
-                    <textarea rows = "10" cols = "40" name = "description" id="textarea" pattern="[a-zA-z]*|[0-9]*" required>
-                    
-                    </textarea>
+                    <label for="description">Enter Input : <i>(enter input in English|80 format)</i></label>
+                    <textarea rows="10" cols="40"  name="description" id="textarea" required></textarea>
                 </div>
                 <div class="button">
-                        <input type="submit" name="submit" value="submit" class="submit">
+                    <input type="submit" name="submit" value="submit" class="submit">
                 </div>
             </div>
         <form>
@@ -87,5 +68,22 @@ set_url("/?q=3");
             <a href="#">&raquo;</a>
         </div>
     </div>
+    <!-- <script>
+        $(document).ready(function(){
+            $('#texarea').mouseenter(function(){
+                alert("hello");
+            });
+        });
+        function check_pattern(){
+            var pattern=/^[a-zA-Z]{1,}[|][0-9]{1,3}$/;
+            var name=$('#textarea').val();
+            console.log(name);
+            if(pattern.test(name)&& name!==''){
+                $('#textarea_error_messsage').hide();
+            }else{
+                $('#textarea_error_message').html("enter input in English|80 format");
+            }
+        }
+    </script> -->
 </body>
 </html>
