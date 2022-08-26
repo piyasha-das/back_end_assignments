@@ -161,23 +161,32 @@
         $pdf->Ln(10);
 
         $t=time();
-        $date=date("Y-m-d",$t);
+        $datee=date("Y-m-d",$t);
         // echo $date;
        
         // echo($_SESSION['date']);
         $file1=time().'.pdf';
         $file2=$date.$file1;
-        $pdf->output($file2,'D');
+      
 
-        $filename="/var/www/Files/pdfs/$file2";
-        $pdf->Output($filename,'F');
+        $sid = $_SESSION['emailid']."/";
+        
+        $dir="pdfs/";
+        mkdir($dir.$sid);
+        $filename="/var/www/Files/controller/".$dir.$sid.$file2;
+        $link="/controller/".$dir.$sid.$file2;
+        $_SESSION['link']=$link;
 
         // $pdf->output();
         $protocol="http://";
         $hostname=$_SERVER['HTTP_HOST']; 
-        $link=$protocol.$hostname."/pdfs/".$file2;  
-        $_SESSION['date']=$date;
+        // $link=$protocol.$hostname."/controller/pdfs/".$sid.$file2;
+       
+        $_SESSION['date']=$datee;
 
-        $_SESSION['link']=$link;
+        $pdf->Output($filename,'F');
+        $pdf->output($file2,'D');
+
+        
     }
 ?>

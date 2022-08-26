@@ -14,18 +14,35 @@
     </head>
     <body>
         <div class="full-page">
+            <?php 
+            $enjoy=$_SESSION['datee'];
+                $protocol="http://";
+                $hostname=$_SERVER['HTTP_HOST'];
+                $sid=$_SESSION['emailid']; 
+                $directory="./controller/pdfs/".$sid."/";
+                $file=glob($directory."*");
+                $filescount=0;
+                if($file){
+                    $filescount=count($file);
+                }
+            ?> 
             <table style="border:1px solid black;margin-left:auto;margin-right:auto" class="table">
                 <th>
                     Profile history
                 </th>
                 <tr>
-                    <td>Date</td>
+                    <td>Date and time</td>
                     <td>Download Link</td>
                 </tr>
-                <tr>
-                    <td><?php echo $_SESSION['date']; ?></td>
-                    <td><a href="<?php echo $_SESSION['link']; ?>">Download Resume</a></td>
-                </tr>
+                <?php for($i=0;$i<$filescount;$i++) { ?>
+                    <tr>
+                        <td><?php echo date ("F d Y H:i:s.", filemtime($file[$i])); ?></td>
+                        <td><a href="<?php echo $file[$i]; ?>">Download Resume</a></td>
+                    </tr>
+                <?php 
+               
+             }     
+            ?>
             </table>
         </div>
     </body>

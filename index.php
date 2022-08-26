@@ -81,9 +81,9 @@
         $router->get('/profile',Profile::class.'::execute');
 
         session_start();
-        if(isset($_SESSION['emailid'])){
+        // if(isset($_SESSION['emailid'])){
           // header('location:/homepage');
-        }
+        // }
         // $router->post('/resume',function($params){
         //   var_dump($_POST);
         // });
